@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 8080;
 app.use(express.static(join(__dirname, 'dist')));
 
 // React Router — send all other routes to index.html
-app.get('*', (_req, res) => {
+app.get('/{*splat}', (_req, res) => {
   res.sendFile(join(__dirname, 'dist', 'index.html'));
 });
 
